@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { LinkedinIcon } from "./Icons/LinkedinIcon";
 import XIcon from "./Icons/XIcon";
+import Link from "next/link";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(null);
@@ -35,7 +36,9 @@ const Navbar = () => {
       <div className="container">
         <div className="headerLeft">
           <div className="headerLogo">
-            <img src="/embark-logo.png" alt="EmbarkLogo" />
+            <Link href="/">
+              <img src="/embark-logo.png" alt="EmbarkLogo" />
+            </Link>
           </div>
         </div>
 

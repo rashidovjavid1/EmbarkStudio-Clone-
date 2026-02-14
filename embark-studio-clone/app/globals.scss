@@ -20,19 +20,18 @@ body {
 
 .navbar {
   background: #000;
-  padding-top: 1.6rem;
-  padding-bottom: 1.6rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   .container {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     max-width: 180rem;
     width: 100%;
     margin-inline: auto;
@@ -51,8 +50,8 @@ body {
     ul {
       display: flex;
       align-items: center;
-      margin-left: 2rem;
-      gap: 3rem;
+      margin-left: 1rem;
+      gap: 1.5rem;
 
       li {
         list-style: none;
@@ -66,14 +65,13 @@ body {
           border: none;
           cursor: pointer;
           font-size: 0.85rem;
-          font-weight: 500;
+          font-weight: 200;
           letter-spacing: 0.12em;
           text-transform: uppercase;
           position: relative;
           padding: 0;
         }
 
-        /* Underline animation */
         a::after,
         button::after {
           content: "";
@@ -91,7 +89,6 @@ body {
           width: 100%;
         }
 
-        /* Dropdown */
         .dropdown {
           position: absolute;
           top: 160%;
@@ -112,7 +109,7 @@ body {
 
             a {
               font-size: 0.8rem;
-              font-weight: 400;
+              font-weight: 200;
               letter-spacing: 0.04em;
               text-transform: none;
               color: #fff;
@@ -152,7 +149,7 @@ body {
 }
 
 .hero {
-  padding-top: 10rem;
+  padding-top: 6rem;
   display: flex;
   align-items: center;
   justify-content: center;
