@@ -1,9 +1,34 @@
-import React from "react";
+"use client";
+
+import { useState } from "react";
 import { LinkedinIcon } from "./Icons/LinkedinIcon";
 import XIcon from "./Icons/XIcon";
 
 const Navbar = () => {
-  const links = ["HOME", "ABOUT", "GAMES", "BLOG", "CAREERS"];
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const handleToggle = (label) => {
+    if (openMenu === label) {
+      setOpenMenu(null);
+    } else {
+      setOpenMenu(label);
+    }
+  };
+
+  const links = [
+    { label: "HOME", href: "/" },
+    { label: "ABOUT", href: "/about" },
+    {
+      label: "GAMES",
+      dropdown: [
+        { label: "THE FINALS", href: "/games/the-finals" },
+        { label: "Arc Raiders", href: "/games/arc-raiders" },
+        { label: "Embark ID Portal", href: "/embark-id-portal" },
+      ],
+    },
+    { label: "BLOG", href: "/blog" },
+    { label: "CAREERS", href: "/careers" },
+  ];
 
   return (
     <header className="navbar">
@@ -16,12 +41,37 @@ const Navbar = () => {
 
         <div className="headerMain">
           <nav>
-            <ul>
-              {links.map((item) => (
-                <li key={item}>
-                  <a href="#">{item}</a>
-                </li>
-              ))}
+            <ul className="nav">
+              {links.map((item) => {
+                if (item.dropdown) {
+                  return (
+                    <li key={item.label} className="nav-item">
+                      <button
+                        className="nav-trigger"
+                        onClick={() => handleToggle(item.label)}
+                      >
+                        {item.label}
+                      </button>
+
+                      {openMenu === item.label && (
+                        <ul className="dropdown">
+                          {item.dropdown.map((sub) => (
+                            <li key={sub.label}>
+                              <a href={sub.href}>{sub.label}</a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  );
+                }
+
+                return (
+                  <li key={item.label} className="nav-item">
+                    <a href={item.href}>{item.label}</a>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
         </div>
