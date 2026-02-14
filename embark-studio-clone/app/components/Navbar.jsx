@@ -1,20 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { LinkedinIcon } from "./Icons/LinkedinIcon";
 import XIcon from "./Icons/XIcon";
 import Link from "next/link";
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(null);
-
-  const handleToggle = (label) => {
-    if (openMenu === label) {
-      setOpenMenu(null);
-    } else {
-      setOpenMenu(label);
-    }
-  };
+  const pathname = usePathname();
 
   const links = [
     { label: "HOME", href: "/" },
@@ -49,29 +41,30 @@ const Navbar = () => {
                 if (item.dropdown) {
                   return (
                     <li key={item.label} className="nav-item">
-                      <button
-                        className="nav-trigger"
-                        onClick={() => handleToggle(item.label)}
-                      >
+                      <span className="nav-trigger">
                         {item.label}
-                      </button>
 
-                      {openMenu === item.label && (
                         <ul className="dropdown">
                           {item.dropdown.map((sub) => (
                             <li key={sub.label}>
-                              <a href={sub.href}>{sub.label}</a>
+                              <Link href={sub.href}>{sub.label}</Link>
                             </li>
                           ))}
                         </ul>
-                      )}
+                      </span>
                     </li>
                   );
                 }
 
+                const isActive =
+                  pathname === item.href ||
+                  (item.href !== "/" && pathname.startsWith(item.href));
+
                 return (
                   <li key={item.label} className="nav-item">
-                    <a href={item.href}>{item.label}</a>
+                    <Link href={item.href} className={isActive ? "active" : ""}>
+                      {item.label}
+                    </Link>
                   </li>
                 );
               })}
@@ -81,12 +74,12 @@ const Navbar = () => {
 
         <div className="headerRight">
           <div className="headerRightMain">
-            <a href="https://x.com/embarkstudios">
+            <Link href="https://x.com/embarkstudios">
               <XIcon />
-            </a>
-            <a href="https://www.linkedin.com/company/12648322/">
+            </Link>
+            <Link href="https://www.linkedin.com/company/12648322/">
               <LinkedinIcon />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
