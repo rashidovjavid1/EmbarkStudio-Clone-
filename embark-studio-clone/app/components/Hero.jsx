@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeroSlider from "./HeroSlider";
 
 const Hero = () => {
   const newsCardItems = [
@@ -13,26 +14,31 @@ const Hero = () => {
       image: "/WEB_News_Banner_Deluxe.jpg",
       label: "ARC RAIDERS | Pre-Order Now!",
       description:
-        "The Rust Belt awaits! Pre-Orders are available for Arc Raiders now! Get the Deluxe Edition to earn the exclusive Astro Bundle. Haven't played yet? Don't miss our Server Slam open test happening Oct 17-19! It's free to join,so invite your friends and get ready to head Topside,Raiders!",
+        "The Rust Belt awaits! Pre-Orders are available for Arc Raiders now!",
       tag: "ARC Raiders will launch on October 30",
     },
-
     {
       image: "/WEB_News_Banner_s3_emerald.jpg",
       label: "THE FINALS | World Tour Emerald",
       description:
-        "It ain't easy being green.. but it worth a try!Win tournaments and unlock every Emerald reward in Season 3! Play THE FINALS World Tour now!",
+        "Win tournaments and unlock every Emerald reward in Season 3!",
+      tag: "",
+    },
+    {
+      image: "/WEB_News_Banner_1.6.0.jpg",
+      label: "THE FINALS | Steal The Spotlight Event",
+      description: "In this limited Mid-season Event the lights are out.",
       tag: "",
     },
 
     {
-      image: "/WEB_News_Banner_1.6.0.jpg",
-      label: "THE FINALS | Steal The Spotlight Event",
+      image: "/makingTHEFINALS.jpg",
+      label: "Creating a Dynamism Shooter | THE FINALS",
       description:
-        "In this limited Mid-season. Event:the lights are out and cashout stations are guarded by turrets and tripwires in the special Solo Bank it mode!",
-      tag: "",
+        "When we started making THE FINALS, we wanted to bring together all the things we always loved in games: Dynamism! In thi episode of MAKING THE FINALS, our Creative Director, Gustav Tilleby Silow, explains Dynamism and walks us through the journey of making the world's first Dynamism Shooter.",
     },
   ];
+
   return (
     <section className="hero">
       <div className="heroMain">
@@ -50,30 +56,15 @@ const Hero = () => {
             </Link>
           </div>
         </div>
+
         <section className="newsSection">
           <div className="container">
             <div className="sectionTitle">
               <h2>Latest News</h2>
             </div>
+
             <div className="newsSectionCards">
-              {newsCardItems.map((item, index) => (
-                <div key={index} className="newsSectionCard">
-                  <div className="newsSectionCardImage">
-                    <img src={item.image} alt={item.label} />
-                  </div>
-                  <div className="newsSectionBottom">
-                    <a href="#">
-                      <h3> {item.label}</h3>
-                    </a>
-                    <a href="#">
-                      <p>{item.description}</p>
-                      <div className="tag">
-                        <span>{item.tag}</span>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              ))}
+              <HeroSlider items={newsCardItems} />
             </div>
           </div>
         </section>
