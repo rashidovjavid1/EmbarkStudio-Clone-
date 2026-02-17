@@ -34,9 +34,11 @@ body {
     width: 100%;
     margin-inline: auto;
     padding-inline: clamp(2.5rem, 3vw, 5rem);
+    margin-bottom: 2.7rem;
   }
 
   .headerLogo img {
+    margin-right: 0.5rem;
     display: flex;
     align-items: center;
     object-fit: cover;
@@ -49,7 +51,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
       margin-left: 1rem;
       padding-inline: 1.5rem;
     }
@@ -64,7 +66,7 @@ body {
       text-decoration: none;
       color: #fff;
       font-size: 0.9rem;
-      font-weight: 200;
+      font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       position: relative;
@@ -177,15 +179,14 @@ body {
           border-radius: 0.5rem;
 
           &:hover {
-            opacity: 0.7;
+            opacity: 0.8;
           }
         }
       }
     }
 
     .newsSection {
-      margin-top: 1.5rem;
-      margin-bottom: 10rem;
+      margin-top: 4.7rem;
 
       .container {
         display: flex;
@@ -202,14 +203,14 @@ body {
           align-items: center;
 
           h2 {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 400;
             color: #fff;
           }
         }
 
         .newsSectionCards {
-          padding-top: 5rem;
+          padding-top: 3rem;
           width: 100%;
 
           .newsSliderWrapper {
@@ -228,9 +229,10 @@ body {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            background: #2a2a2a;
+            width: 60px;
+            height: 60px;
+            background: #a8a6a1;
+            opacity: 60%;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -238,12 +240,12 @@ body {
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 20;
-            transition: background 0.3s ease;
+            transition: background 0.2s ease;
           }
 
           .custom-prev:hover,
           .custom-next:hover {
-            background: #444;
+            background: #000;
           }
 
           .custom-prev {
@@ -285,24 +287,65 @@ body {
 
               h3 {
                 font-size: large;
-                font-weight: 500;
+                font-weight: 400;
               }
 
               p {
-                font-size: smaller;
-                font-weight: 400;
-                width: 85%;
+                letter-spacing: 0.8px;
+                font-size: small;
+                font-weight: 300;
+                width: 80%;
               }
 
               .tag {
-                padding-top: 0.8rem;
+                padding-top: 0.4rem;
 
                 span {
-                  font-weight: bold;
+                  font-weight: 400;
                   font-size: small;
                 }
               }
             }
+          }
+        }
+      }
+    }
+
+    .bottomSection {
+      padding-top: 8rem;
+      padding-bottom: 10rem;
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 180rem;
+        width: 100%;
+        margin-inline: auto;
+        padding-inline: clamp(6rem, 3vw, 5rem);
+
+        .linksSection {
+          padding-top: 2rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 13rem;
+
+          a {
+            color: #fff;
+            opacity: 60%;
+            font-size: 15px;
+            font-weight: 300;
+          }
+        }
+
+        .privacyPolicy {
+          padding-top: 2rem;
+          p {
+            font-style: italic;
+            text-wrap: nowrap;
+            font-size: 15px;
+            font-weight: 400;
           }
         }
       }
