@@ -427,5 +427,52 @@ footer {
         }
       }
     }
+    .founders {
+      margin-top: 10rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .foundersImage {
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+      .foundersDescription {
+        padding-top: 6rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 10rem;
+        gap: 3rem;
+        .foundersDescriptionTitle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          h2 {
+            text-align: left;
+            font-size: 64px;
+            font-weight: 300;
+          }
+
+          span {
+            font-size: 64px;
+            font-weight: 700;
+          }
+        }
+        .foundersDescriptionBio {
+          width: 30rem;
+
+          p {
+            text-align: left;
+            font-weight: 300;
+            word-spacing: 1.8px;
+            line-height: 1.8rem;
+            font-size: 15.5px;
+          }
+        }
+      }
+    }
   }
 }

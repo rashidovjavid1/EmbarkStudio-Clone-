@@ -38,6 +38,24 @@ const page = () => {
             </div>
           ))}
         </div>
+        <div className="founders">
+          <div className="foundersImage">
+            <img src="/embarkTeam.jpg" alt="Embark Studio Team" />
+          </div>
+          <div className="foundersDescription">
+            <div className="foundersDescriptionTitle">
+              <h2>Our</h2>
+              <span>founders</span>
+            </div>
+            <div className="foundersDescriptionBio">
+              <p>
+                Embark Studios was founded in November 2018, by industry
+                veterans Magnus Nordin, Rob Runesson, Stefan Strandberg, Patrick
+                Söderlund, Jenny Huldschiner and Johan Andersson.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
