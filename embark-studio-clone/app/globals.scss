@@ -70,10 +70,6 @@ header {
       letter-spacing: 0.12em;
       text-transform: uppercase;
       position: relative;
-
-      &:hover {
-        text-decoration: underline;
-      }
     }
 
     a::after {
