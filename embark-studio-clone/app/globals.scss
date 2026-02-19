@@ -357,7 +357,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 7rem;
+  padding-top: 7.5rem;
   .container {
     box-sizing: border-box;
     max-width: 160rem;
@@ -377,18 +377,18 @@ footer {
         gap: 1rem;
 
         h1 {
-          font-size: 64px;
+          font-size: 56px;
           font-weight: 400;
           text-align: center;
         }
         span {
-          font-size: 64px;
+          font-size: 56px;
           font-weight: 700;
           text-align: center;
         }
       }
       .description {
-        padding-top: 2rem;
+        padding-top: 2.5rem;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
@@ -400,7 +400,7 @@ footer {
           font-size: 14.6px;
           line-height: 1.7rem;
           letter-spacing: 0.6px;
-          font-weight: 100;
+          font-weight: 300;
         }
       }
     }
