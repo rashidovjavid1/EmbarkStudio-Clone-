@@ -1,4 +1,5 @@
 import React from "react";
+import { projectImages } from "@/constants/projectImages";
 
 const page = () => {
   return (
@@ -29,6 +30,13 @@ const page = () => {
               nurture, and the products we build.{" "}
             </p>
           </div>
+        </div>
+        <div className="projects">
+          {projectImages.map((item, index) => (
+            <div key={index} className="projectImage">
+              <img src={item} alt="#" />
+            </div>
+          ))}
         </div>
       </div>
     </div>
