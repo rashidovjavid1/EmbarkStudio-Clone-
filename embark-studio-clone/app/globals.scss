@@ -422,7 +422,7 @@ footer {
           width: 100%;
           max-height: 100%;
           object-fit: cover;
-          aspect-ratio: 4 / 3;
+          aspect-ratio: 4/ 3;
           overflow: hidden;
         }
       }
@@ -431,19 +431,21 @@ footer {
       margin-top: 10rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      align-items: start;
 
       .foundersImage {
         img {
+          max-width: 55rem;
           object-fit: cover;
           width: 100%;
         }
       }
       .foundersDescription {
-        padding-top: 6rem;
+        padding-top: 10rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin-left: 10rem;
+        margin-left: 3rem;
         gap: 3rem;
         .foundersDescriptionTitle {
           display: flex;
@@ -462,13 +464,12 @@ footer {
           }
         }
         .foundersDescriptionBio {
-          width: 30rem;
-
           p {
+            text-wrap: wrap;
             text-align: left;
             font-weight: 300;
-            word-spacing: 1.8px;
-            line-height: 1.8rem;
+            word-spacing: 2px;
+            line-height: 2rem;
             font-size: 15.5px;
           }
         }
