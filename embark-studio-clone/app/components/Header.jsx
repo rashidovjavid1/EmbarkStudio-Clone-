@@ -5,7 +5,7 @@ import { LinkedinIcon } from "./Icons/LinkedinIcon";
 import XIcon from "./Icons/XIcon";
 import Link from "next/link";
 
-const Navbar = () => {
+const Header = () => {
   const pathname = usePathname();
 
   const links = [
@@ -24,7 +24,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="navbar">
+    <header>
       <div className="container">
         <div className="headerLeft">
           <div className="headerLogo">
@@ -87,4 +87,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;
