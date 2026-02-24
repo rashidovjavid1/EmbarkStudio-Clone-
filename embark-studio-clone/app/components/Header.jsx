@@ -2,26 +2,13 @@
 
 import { usePathname } from "next/navigation";
 import { LinkedinIcon } from "./Icons/LinkedinIcon";
+import HamburgerMenu from "./HamburgerMenu";
+import { links } from "@/constants/links";
 import XIcon from "./Icons/XIcon";
 import Link from "next/link";
 
 const Header = () => {
   const pathname = usePathname();
-
-  const links = [
-    { label: "HOME", href: "/" },
-    { label: "ABOUT", href: "/about" },
-    {
-      label: "GAMES",
-      dropdown: [
-        { label: "THE FINALS", href: "/games/the-finals" },
-        { label: "Arc Raiders", href: "/games/arc-raiders" },
-        { label: "Embark ID Portal", href: "/embark-id-portal" },
-      ],
-    },
-    { label: "BLOG", href: "/blog" },
-    { label: "CAREERS", href: "/careers" },
-  ];
 
   return (
     <header>
@@ -70,6 +57,9 @@ const Header = () => {
               })}
             </ul>
           </nav>
+        </div>
+        <div className="hamburgerMenu">
+          <HamburgerMenu />
         </div>
 
         <div className="headerRight">
