@@ -3,20 +3,37 @@
 import { useState } from "react";
 import Link from "next/link";
 import { links } from "@/constants/links";
+
 const HamburgerMenu = () => {
-  const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
     <header className="hamburgerMenu">
       <div className="container">
-        <div className="hamburgerMenuButton">
-          {links.map((item, index) => (
-            <ul key={index}>
-              <li>
+        <div className="hamburgerToggle">
+          <button
+            className={`hamburgerButton ${openMenu ? "active" : ""}`}
+            onClick={() => setOpenMenu(!openMenu)}
+          ></button>
+        </div>
+
+        <div className={`hamburger ${openMenu ? "show" : ""}`}>
+          <button
+            className="closeIcon"
+            type="button"
+            onClick={() => setOpenMenu(!openMenu)}
+          >
+            X
+          </button>
+          <ul>
+            {links.map((item, index) => (
+              <li key={index}>
                 <Link href="/">{item.label}</Link>
               </li>
-            </ul>
-          ))}
+            ))}
+          </ul>
         </div>
+
         <div className="logo">
           <Link href="/">
             <img src="/embark-logo.png" alt="embarkLogo" />

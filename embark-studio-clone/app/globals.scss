@@ -24,10 +24,15 @@ body {
   }
 }
 @media (max-width: 768px) {
-  body {
-    overflow: hidden;
+  * {
+    overflow-x: hidden;
   }
-
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
   .headerMain {
     display: none;
   }
@@ -35,36 +40,93 @@ body {
   .hamburgerMenu {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 
-    .hamburgerMenuButton {
-      content: "";
-      color: #a8a6a1;
+    .container {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      gap: 4rem;
+      justify-content: start;
+      align-items: center;
 
-      ul {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        list-style: none;
-        background-color: transparent;
+      .hamburgerToggle {
+        .hamburgerButton {
+          position: relative;
+          width: 35px;
+          height: 15px;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+        }
 
-        li {
-          a {
-            text-decoration: none;
-            cursor: pointer;
-            color: #fff;
-          }
+        .hamburgerButton::before,
+        .hamburgerButton::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: white;
+          opacity: 50%;
+          transition: 0.3s ease;
+        }
+
+        .hamburgerButton::before {
+          top: 0;
+        }
+
+        .hamburgerButton::after {
+          bottom: 0;
         }
       }
     }
-    .logo {
+
+    .hamburger {
+      position: fixed;
+      inset: 0;
+      background: black;
       display: flex;
+      justify-content: center;
       align-items: center;
-      justify-content: space-evenly;
+
+      transform: translateY(-100%);
+      transition: 0.4s ease;
+
+      z-index: 999;
+      > button {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        background-color: transparent;
+        color: white;
+        border: none;
+      }
+    }
+
+    .hamburger.show {
+      transform: translateY(0);
+    }
+
+    .hamburger ul {
+      list-style: none;
+      text-align: center;
+    }
+
+    .hamburger li {
+      margin: 20px 0;
+    }
+
+    .hamburger a {
+      color: white;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+    .logo {
       img {
         object-fit: cover;
-        max-width: 10rem;
-        max-height: 2rem;
+        max-width: 9rem;
+        max-height: 4rem;
       }
     }
   }

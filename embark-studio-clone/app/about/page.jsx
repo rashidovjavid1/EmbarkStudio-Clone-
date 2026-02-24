@@ -27,7 +27,7 @@ const page = () => {
               breakthrough that happens here is driven by asking ourselves ‘what
               if.’ We believe that progress starts with curiosity, and this
               fuels everything we do — from the people we hire, the culture we
-              nurture, and the products we build.{" "}
+              nurture, and the products we build.
             </p>
           </div>
         </div>
