@@ -1,46 +1,19 @@
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
 import { links } from "@/constants/links";
+import Link from "next/link";
 
-const HamburgerMenu = () => {
-  const [openMenu, setOpenMenu] = useState(false);
-
+const HamburgerMenu = ({ openMenu, setOpenMenu }) => {
   return (
-    <header className="hamburgerMenu">
-      <div className="container">
-        <div className="hamburgerToggle">
-          <button
-            className={`hamburgerButton ${openMenu ? "active" : ""}`}
-            onClick={() => setOpenMenu(!openMenu)}
-          ></button>
-        </div>
-
-        <div className={`hamburger ${openMenu ? "show" : ""}`}>
-          <button
-            className="closeIcon"
-            type="button"
-            onClick={() => setOpenMenu(!openMenu)}
-          >
-            X
-          </button>
-          <ul>
-            {links.map((item, index) => (
-              <li key={index}>
-                <Link href="/">{item.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="logo">
-          <Link href="/">
-            <img src="/embark-logo.png" alt="embarkLogo" />
-          </Link>
-        </div>
-      </div>
-    </header>
+    <div className={openMenu ? "mobileMenu open" : "mobileMenu"}>
+      <ul>
+        {links.map((item) => (
+          <li key={item.label}>
+            <Link href="#" onClick={() => setOpenMenu(false)}>
+              {item.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

@@ -49,7 +49,10 @@ const Header = () => {
 
                 return (
                   <li key={item.label} className="nav-item">
-                    <Link href={item.href} className={isActive ? "active" : ""}>
+                    <Link
+                      href="{item.href}"
+                      className={isActive ? "active" : ""}
+                    >
                       {item.label}
                     </Link>
                   </li>
