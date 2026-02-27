@@ -7,9 +7,11 @@ const Footer = () => {
       <div className="container">
         <div className="linksSection">
           {linkItems.map((item, index) => (
-            <a key={index} href="#">
-              <span>{item}</span>
-            </a>
+            <div key={index} className="linkItem">
+              <a href="#">
+                <span>{item}</span>
+              </a>
+            </div>
           ))}
         </div>
       </div>
