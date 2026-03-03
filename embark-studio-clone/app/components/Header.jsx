@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { LinkedinIcon } from "./Icons/LinkedinIcon";
-import HamburgerMenu from "./HamburgerMenu";
+import Hamburger from "./Hamburger";
 import { links } from "@/constants/links";
 import XIcon from "./Icons/XIcon";
 import Link from "next/link";
@@ -59,9 +59,8 @@ const Header = () => {
           </nav>
         </div>
         <div className="hamburgerMenu">
-          <HamburgerMenu />
+          <Hamburger />
         </div>
-
         <div className="headerRight">
           <div className="headerRightMain">
             <Link href="https://x.com/embarkstudios">
