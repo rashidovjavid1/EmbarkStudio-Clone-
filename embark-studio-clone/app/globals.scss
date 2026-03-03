@@ -37,42 +37,27 @@ body {
 
   header {
     .container {
+      padding-top: 1rem;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       max-width: 100%;
 
-      .menuToggle {
-        z-index: 10;
-        margin-right: 3rem;
-
-        button {
-          background: transparent;
-          border: none;
-          padding: 0;
-          cursor: pointer;
-
-          width: 30px;
-          height: 30px;
-
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          gap: 6px;
-        }
-
-        span {
-          display: block;
-          width: 22px;
-          height: 2px;
-          background: #a8a6a1;
-          transition: 0.3s ease;
-        }
+      .headerMain {
+        visibility: none;
       }
+
+      .headerRight {
+        display: none;
+      }
+
       .headerLogo {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         img {
+          height: 24px;
+          width: auto;
           object-fit: cover;
           width: 100%;
         }
@@ -88,6 +73,74 @@ body {
         visibility: hidden;
       }
     }
+    .mobilePanel {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #a8a6a1;
+      z-index: 999;
+      padding: 1rem 2rem;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 50%;
+    }
+
+    .mobilePanel ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .mobilePanel ul li a {
+      display: block;
+      padding: 1rem 0;
+      color: #fff;
+      text-decoration: none;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .mobilePanel ul li span {
+      text-decoration: none;
+      display: block;
+      padding: 1rem 0;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+  .hamburgerButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .hamburgerButton span {
+    display: block;
+    width: 36px;
+    height: 2px;
+    opacity: 60%;
+    background: #fff;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .hamburgerButton.open .line1 {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .hamburgerButton.open .line2 {
+    transform: translateY(-5px) rotate(-45deg);
   }
 
   .hero {

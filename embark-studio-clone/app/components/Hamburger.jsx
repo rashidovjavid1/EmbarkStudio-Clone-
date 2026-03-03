@@ -4,15 +4,18 @@ import { useState } from "react";
 import { links } from "@/constants/links";
 import Link from "next/link";
 
-const Hamburger = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+const Hamburger = ({ openMenu, setOpenMenu }) => {
   const [openDropDown, setOpenDropDown] = useState(false);
 
   return (
     <>
-      <button type="button" onClick={() => setOpenMenu(!openMenu)}>
-        <span></span>
-        <span></span>
+      <button
+        className={openMenu ? "hamburgerButton open" : "hamburgerButton"}
+        type="button"
+        onClick={() => setOpenMenu(!openMenu)}
+      >
+        <span className="line1"></span>
+        <span className="line2"></span>
       </button>
 
       {openMenu && (
@@ -29,7 +32,12 @@ const Hamburger = () => {
                     <ul>
                       {item.dropdown.map((sub, subIndex) => (
                         <li key={subIndex}>
-                          <Link href={sub.href}>{sub.label}</Link>
+                          <Link
+                            href={sub.href}
+                            onClick={() => setOpenMenu(false)}
+                          >
+                            {sub.label}
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -37,7 +45,9 @@ const Hamburger = () => {
                 </li>
               ) : (
                 <li key={index}>
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link href={item.href} onClick={() => setOpenMenu(false)}>
+                    {item.label}
+                  </Link>
                 </li>
               ),
             )}

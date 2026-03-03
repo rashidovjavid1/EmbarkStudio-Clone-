@@ -6,16 +6,21 @@ import Hamburger from "./Hamburger";
 import { links } from "@/constants/links";
 import XIcon from "./Icons/XIcon";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const pathname = usePathname();
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <header>
       <div className="container">
+        <div className="hamburgerMenu">
+          <Hamburger openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        </div>
         <div className="headerLeft">
           <div className="headerLogo">
-            <Link href="/">
+            <Link href="/" onClick={() => setOpenMenu(false)}>
               <img src="/embark-logo.png" alt="EmbarkLogo" />
             </Link>
           </div>
@@ -58,9 +63,7 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-        <div className="hamburgerMenu">
-          <Hamburger />
-        </div>
+
         <div className="headerRight">
           <div className="headerRightMain">
             <Link href="https://x.com/embarkstudios">
